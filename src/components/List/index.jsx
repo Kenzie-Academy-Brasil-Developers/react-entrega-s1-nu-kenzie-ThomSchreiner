@@ -18,9 +18,7 @@ export function List({ listTransactions, setListTransactions }) {
 
     function filterList(filterType) {
         filterType
-            ? setListTransactionsFiltred(
-                  listTransactions.filter((list) => list.type == filterType)
-              )
+            ? setListTransactionsFiltred(listTransactions.filter((list) => list.type == filterType))
             : setListTransactionsFiltred([])
     }
 
@@ -28,41 +26,23 @@ export function List({ listTransactions, setListTransactions }) {
         <div className="list">
             <nav className="list-nav">
                 <h3>Resumo financeiro</h3>
-                <button
-                    onClick={() => filterList(false)}
-                    className="btn-medium btn-medium-active"
-                >
+                <button onClick={() => filterList(false)} className="btn-medium btn-medium-active">
                     Todos
                 </button>
-                <button
-                    onClick={() => filterList("Entrada")}
-                    className="btn-medium"
-                >
+                <button onClick={() => filterList("Entrada")} className="btn-medium">
                     Entradas
                 </button>
-                <button
-                    onClick={() => filterList("Despesa")}
-                    className="btn-medium"
-                >
+                <button onClick={() => filterList("Despesa")} className="btn-medium">
                     Despesas
                 </button>
             </nav>
             <ul>
                 {listTransactionsFiltred.length
                     ? listTransactionsFiltred.map((item) => (
-                          <li
-                              key={item.id}
-                              className={
-                                  item.type == "Entrada" ? "entrada" : ""
-                              }
-                          >
+                          <li key={item.id} className={item.type == "Entrada" ? "entrada" : ""}>
                               <div>
-                                  <h3 className="title-3">
-                                      {item.description}
-                                  </h3>
-                                  <p className="text-2">
-                                      {formatValue(item.value)}
-                                  </p>
+                                  <h3 className="title-3">{item.description}</h3>
+                                  <p className="text-2">{formatValue(item.value)}</p>
                                   <button
                                       onClick={() => removeItem(item.id)}
                                       className="trash"
@@ -72,19 +52,10 @@ export function List({ listTransactions, setListTransactions }) {
                           </li>
                       ))
                     : listTransactions.map((item) => (
-                          <li
-                              key={item.id}
-                              className={
-                                  item.type == "Entrada" ? "entrada" : ""
-                              }
-                          >
+                          <li key={item.id} className={item.type == "Entrada" ? "entrada" : ""}>
                               <div>
-                                  <h3 className="title-3">
-                                      {item.description}
-                                  </h3>
-                                  <p className="text-2">
-                                      {formatValue(item.value)}
-                                  </p>
+                                  <h3 className="title-3">{item.description}</h3>
+                                  <p className="text-2">{formatValue(item.value)}</p>
                                   <button
                                       onClick={() => removeItem(item.id)}
                                       className="trash"
