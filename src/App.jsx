@@ -27,7 +27,6 @@ export function App() {
                     <List
                         listTransactions={listTransactions}
                         setListTransactions={setListTransactions}
-                        listId={listId}
                     />
                 </main>
             ) : (
