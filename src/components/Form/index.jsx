@@ -65,7 +65,7 @@ export function Form({ setListTransactions, listId, setListId }) {
                     className="input text-2"
                     required
                 >
-                    <option value="" selected hidden disabled>
+                    <option value="" hidden disabled>
                         Tipo
                     </option>
                     <option value="Entrada">Entrada</option>
