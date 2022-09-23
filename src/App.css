@@ -1,0 +1,17 @@
+.App {
+}
+
+.container {
+    padding: 0 100px;
+}
+
+.main {
+    padding-top: 120px;
+    padding-bottom: 20px;
+    display: flex;
+    gap: 60px;
+}
+
+.aside {
+    width: 43%;
+}

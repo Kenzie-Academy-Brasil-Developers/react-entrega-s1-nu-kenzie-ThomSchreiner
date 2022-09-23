@@ -1,0 +1,26 @@
+.total-value {
+    width: 100%;
+    padding: 20px 24px;
+    border: 1px solid var(--grey-2);
+    border-radius: var(--radius-medium);
+}
+
+.total-value div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.total-value div h3 {
+    color: var(--grey-4);
+    margin-bottom: 16px;
+}
+
+.total-value div h3 + h3 {
+    color: var(--primary-1);
+    text-align: end;
+}
+
+.total-value p {
+    color: var(--grey-3);
+}

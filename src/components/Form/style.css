@@ -1,0 +1,52 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 38px 25px;
+    border: 1px solid var(--grey-2);
+    border-radius: var(--radius-medium);
+    color: var(--grey-4);
+    margin-bottom: 16px;
+}
+
+.form label {
+    margin-bottom: 10px;
+}
+
+.form > span {
+    margin-top: 5px;
+    margin-bottom: 17px;
+}
+
+.form > div {
+    margin-bottom: 19px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+}
+.form div label {
+    grid-row: 1;
+}
+
+.form div div {
+    width: 120px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.form div div input {
+    padding: 0 32px 0 16px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.form div div span {
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    transform: translateY(-50%);
+    color: var(--grey-3);
+}

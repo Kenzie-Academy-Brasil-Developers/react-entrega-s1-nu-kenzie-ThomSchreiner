@@ -1,0 +1,42 @@
+.list {
+    width: 57%;
+}
+
+.list-nav {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.list-nav h3 {
+    flex: 1 1 auto;
+    color: var(--grey-4);
+}
+
+.list li {
+    padding: 15px;
+    border-radius: var(--radius-medium);
+    background-color: var(--grey-1);
+    border-left: 4px solid var(--grey-2);
+    margin-bottom: 32px;
+}
+
+.list li.entrada {
+    border-left: 4px solid var(--secondary-1);
+}
+
+.list li div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.list li div h3 {
+    flex: 2 1 auto;
+}
+
+.list li div p {
+    flex: 1 1 auto;
+}
