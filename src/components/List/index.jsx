@@ -28,7 +28,6 @@ export function List({ listTransactions, setListTransactions }) {
                 <div>
                     <img src={noCard} alt="noCard" />
                     <img src={noCard} alt="noCard" />
-                    <img src={noCard} alt="noCard" />
                 </div>
             </div>
         )
@@ -40,7 +39,6 @@ export function List({ listTransactions, setListTransactions }) {
                 <NavFilter filterList={filterList} listFilterType={listFilterType} />
                 <h2 className="title-2">Você ainda não possui nenhum lançamento</h2>
                 <div>
-                    <img src={noCard} alt="noCard" />
                     <img src={noCard} alt="noCard" />
                     <img src={noCard} alt="noCard" />
                 </div>

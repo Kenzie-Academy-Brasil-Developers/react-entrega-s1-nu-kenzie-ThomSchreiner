@@ -1,26 +1,30 @@
 .login-page {
-    min-height: 100vh;
+    height: 100vh;
+    background-color: var(--grey-4);
+}
+
+.login-page .container {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    background-color: var(--grey-4);
 }
 
-.login-page div {
+.login-page .container div {
     color: var(--white);
 }
-.login-page div:nth-child(1) img {
+.login-page .container div:nth-child(1) img {
     margin-bottom: 30px;
 }
 
-.login-page div h1 {
+.login-page .container div h1 {
     margin-bottom: 30px;
 }
 
-.login-page div p {
+.login-page .container div p {
     margin-bottom: 30px;
 }
-.login-page div button {
+.login-page .container div button {
     width: 250px;
 }
