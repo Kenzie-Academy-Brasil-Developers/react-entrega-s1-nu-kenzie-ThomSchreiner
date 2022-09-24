@@ -1,9 +1,6 @@
 .header {
     height: 80px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,6 +9,13 @@
     z-index: 10;
 }
 
-.header img {
+.header div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header div img {
     height: 20px;
 }

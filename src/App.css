@@ -1,8 +1,7 @@
-.App {
-}
-
 .container {
     padding: 0 100px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .main {
@@ -12,6 +11,6 @@
     gap: 60px;
 }
 
-.aside {
+aside {
     width: 43%;
 }

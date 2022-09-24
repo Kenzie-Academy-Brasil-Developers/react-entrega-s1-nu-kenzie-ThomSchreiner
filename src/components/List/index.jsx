@@ -1,68 +1,63 @@
 /* eslint-disable eqeqeq */
 import { useState } from "react"
+import { ListItem } from "../ListItem"
+import { NavFilter } from "../NavFilter"
+import noCard from "../../assets/no-card.svg"
 import "./style.css"
 
 export function List({ listTransactions, setListTransactions }) {
     const [listTransactionsFiltred, setListTransactionsFiltred] = useState([])
+    const [listFilterType, setlistFilterType] = useState(false)
 
     function removeItem(id) {
         setListTransactions(listTransactions.filter((item) => item.id !== id))
-    }
-
-    function formatValue(value) {
-        return value.toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-        })
     }
 
     function filterList(filterType) {
         filterType
             ? setListTransactionsFiltred(listTransactions.filter((list) => list.type == filterType))
             : setListTransactionsFiltred([])
+        setlistFilterType(filterType)
+    }
+
+    if (!listTransactions.length) {
+        return (
+            <div className="list">
+                <NavFilter filterList={filterList} listFilterType={listFilterType} />
+                <h2 className="title-2">Você ainda não possui nenhum lançamento</h2>
+                <div>
+                    <img src={noCard} alt="noCard" />
+                    <img src={noCard} alt="noCard" />
+                    <img src={noCard} alt="noCard" />
+                </div>
+            </div>
+        )
+    }
+
+    if (listFilterType && !listTransactionsFiltred.length) {
+        return (
+            <div className="list">
+                <NavFilter filterList={filterList} listFilterType={listFilterType} />
+                <h2 className="title-2">Você ainda não possui nenhum lançamento</h2>
+                <div>
+                    <img src={noCard} alt="noCard" />
+                    <img src={noCard} alt="noCard" />
+                    <img src={noCard} alt="noCard" />
+                </div>
+            </div>
+        )
     }
 
     return (
         <div className="list">
-            <nav className="list-nav">
-                <h3>Resumo financeiro</h3>
-                <button onClick={() => filterList(false)} className="btn-medium btn-medium-active">
-                    Todos
-                </button>
-                <button onClick={() => filterList("Entrada")} className="btn-medium">
-                    Entradas
-                </button>
-                <button onClick={() => filterList("Despesa")} className="btn-medium">
-                    Despesas
-                </button>
-            </nav>
+            <NavFilter filterList={filterList} listFilterType={listFilterType} />
             <ul>
                 {listTransactionsFiltred.length
                     ? listTransactionsFiltred.map((item) => (
-                          <li key={item.id} className={item.type == "Entrada" ? "entrada" : ""}>
-                              <div>
-                                  <h3 className="title-3">{item.description}</h3>
-                                  <p className="text-2">{formatValue(item.value)}</p>
-                                  <button
-                                      onClick={() => removeItem(item.id)}
-                                      className="trash"
-                                  ></button>
-                              </div>
-                              <p className="text-2">{item.type}</p>
-                          </li>
+                          <ListItem key={item.id} item={item} removeItem={removeItem} />
                       ))
                     : listTransactions.map((item) => (
-                          <li key={item.id} className={item.type == "Entrada" ? "entrada" : ""}>
-                              <div>
-                                  <h3 className="title-3">{item.description}</h3>
-                                  <p className="text-2">{formatValue(item.value)}</p>
-                                  <button
-                                      onClick={() => removeItem(item.id)}
-                                      className="trash"
-                                  ></button>
-                              </div>
-                              <p className="text-2">{item.type}</p>
-                          </li>
+                          <ListItem key={item.id} item={item} removeItem={removeItem} />
                       ))}
             </ul>
         </div>

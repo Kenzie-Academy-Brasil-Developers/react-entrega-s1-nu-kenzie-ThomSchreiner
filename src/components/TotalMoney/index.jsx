@@ -2,12 +2,10 @@ import "./style.css"
 
 export function TotalMoney({ listTransactions }) {
     function formatValue() {
-        return listTransactions
+        const value = listTransactions
             .reduce((acc, act) => acc + act.value, 0)
-            .toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-            })
+            .toLocaleString("pt-BR", { minimumFractionDigits: 2 })
+        return `R$ ${value}`
     }
 
     return (

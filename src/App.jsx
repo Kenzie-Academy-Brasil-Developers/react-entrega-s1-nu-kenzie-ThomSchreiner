@@ -12,7 +12,7 @@ export function App() {
     const [listId, setListId] = useState(0)
 
     return (
-        <div className="App">
+        <div>
             {isLoggedIn ? (
                 <main className="main container">
                     <Header setIsLoggedIn={setIsLoggedIn} />
