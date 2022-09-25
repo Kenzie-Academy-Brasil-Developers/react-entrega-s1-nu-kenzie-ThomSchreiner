@@ -11,7 +11,7 @@ export function Form({ setListTransactions, listId, setListId }) {
         setListTransactions((oldList) => [
             ...oldList,
             {
-                description: description,
+                description: description.trim(),
                 type: select,
                 value: select === "Entrada" ? value : -value,
                 id: listId,

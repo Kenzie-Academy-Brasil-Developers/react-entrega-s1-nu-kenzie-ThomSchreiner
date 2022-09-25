@@ -11,6 +11,12 @@ export function App() {
     const [listTransactions, setListTransactions] = useState([])
     const [listId, setListId] = useState(0)
 
+    function addListToStorage(list) {
+        localStorage.setItem("@NuKenzie:ListTransactions", JSON.stringify(list))
+    }
+
+    isLoggedIn && addListToStorage(listTransactions)
+
     return (
         <div>
             {isLoggedIn ? (
@@ -30,7 +36,10 @@ export function App() {
                     />
                 </main>
             ) : (
-                <LoginPage setIsLoggedIn={setIsLoggedIn} />
+                <LoginPage
+                    setIsLoggedIn={setIsLoggedIn}
+                    setListTransactions={setListTransactions}
+                />
             )}
         </div>
     )
