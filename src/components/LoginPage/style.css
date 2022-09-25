@@ -28,3 +28,13 @@
 .login-page .container div button {
     width: 250px;
 }
+
+@media (max-width: 768px) {
+    .login-page .container div:nth-child(1) {
+        text-align: center;
+    }
+
+    .login-page .container div:nth-child(2) {
+        display: none;
+    }
+}

@@ -38,3 +38,17 @@
 .list li div p {
     flex: 1 1 auto;
 }
+
+@media (max-width: 768px) {
+    .list {
+        width: 100%;
+    }
+
+    .list li {
+        margin-bottom: 24px;
+    }
+
+    .list li div {
+        margin-bottom: 12px;
+    }
+}

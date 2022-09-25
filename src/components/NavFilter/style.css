@@ -2,10 +2,27 @@
     margin-bottom: 24px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
 .list-nav h3 {
     flex: 1 1 auto;
     color: var(--grey-4);
+}
+
+.list-nav div {
+    display: flex;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .list-nav {
+        gap: 8px;
+    }
+
+    .list-nav div {
+        overflow: auto;
+        gap: 8px;
+    }
 }

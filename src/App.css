@@ -1,5 +1,6 @@
 .container {
-    padding: 0 100px;
+    padding-left: 100px;
+    padding-right: 100px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -13,4 +14,19 @@
 
 aside {
     width: 43%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
 }
