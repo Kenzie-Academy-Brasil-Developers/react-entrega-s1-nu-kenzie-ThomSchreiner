@@ -4,6 +4,7 @@ import { ListItem } from "../ListItem"
 import { NavFilter } from "../NavFilter"
 import noCard from "../../assets/no-card.svg"
 import "./style.css"
+import { toast } from "react-toastify"
 
 export function List({ listTransactions, setListTransactions }) {
     const [listTransactionsFiltred, setListTransactionsFiltred] = useState([])
@@ -11,6 +12,7 @@ export function List({ listTransactions, setListTransactions }) {
 
     function removeItem(id) {
         setListTransactions(listTransactions.filter((item) => item.id !== id))
+        toast.success("Item deletado com sucesso!")
     }
 
     function filterList(filterType) {

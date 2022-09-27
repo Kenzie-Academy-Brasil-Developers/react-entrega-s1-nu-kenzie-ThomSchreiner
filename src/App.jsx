@@ -5,6 +5,8 @@ import { Form } from "./components/Form"
 import { Header } from "./components/Header"
 import { TotalMoney } from "./components/TotalMoney"
 import { List } from "./components/List"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.min.css"
 
 export function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -41,6 +43,7 @@ export function App() {
                     setListTransactions={setListTransactions}
                 />
             )}
+            <ToastContainer />
         </div>
     )
 }

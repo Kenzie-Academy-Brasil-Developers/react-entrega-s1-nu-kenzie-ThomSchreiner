@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./style.css"
+import { toast } from "react-toastify"
 
 export function Form({ setListTransactions, listId, setListId }) {
     const [description, setDescription] = useState("")
@@ -8,19 +9,24 @@ export function Form({ setListTransactions, listId, setListId }) {
 
     function addToList(event) {
         event.preventDefault()
-        setListTransactions((oldList) => [
-            ...oldList,
-            {
-                description: description.trim(),
-                type: select,
-                value: select === "Entrada" ? value : -value,
-                id: listId,
-            },
-        ])
-        setListId(listId + 1)
-        setDescription("")
-        setValue("")
-        setSelect("")
+        if (value <= 0) {
+            toast.warning("Digite apenas números positivos")
+        } else {
+            setListTransactions((oldList) => [
+                ...oldList,
+                {
+                    description: description.trim(),
+                    type: select,
+                    value: select === "Entrada" ? value : -value,
+                    id: listId,
+                },
+            ])
+            setListId(listId + 1)
+            setDescription("")
+            setValue("")
+            setSelect("")
+            toast.success("Adicionado com sucesso!")
+        }
     }
 
     return (
